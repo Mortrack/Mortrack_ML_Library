@@ -404,7 +404,7 @@ Expected code result:
 
 ![](img/codeSampleGraphicResult.png)
 
-### Permissions, conditions and limitations to use this API
+## Permissions, conditions and limitations to use this API
 In accordance to the Apache License 2.0 which this API has, you can use it for commercial use, you can distribute it, modify it and/or use it in privately as long as a copy of its license is included.
 It is also requested to give credit to the author and to be aware that this license includes a limitation of liability and explicitly states that it does NOT provide any warranty.
 
