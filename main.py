@@ -1,12 +1,13 @@
-# --------------------------------------------------------------------------- #
-# RELEASE DATE: May 26, 2020.
-# AUTHOR OF THIS CODE: Engineer Cesar Miranda Meza (alias: Mortrack).
-# --------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------- #
+# COMPLETITION DATE: May 26, 2020.
+# AUTHOR OF THE MORTRACK ML API: Engineer Cesar Miranda Meza (alias: Mortrack).
+#
 # Hoping that the Mortrack ML API is useful for your projects, the following
 # template is proposed by the engineer Cesar Miranda Meza (alias Mortrack) as
 # a best practice to work with machine learning algorithms. Enjoy and have fun!
+# --------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------- #
 
 
