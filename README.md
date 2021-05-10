@@ -401,6 +401,7 @@ plt.show()
 ```
 
 Expected code result:
+
 ![](img/codeSampleGraphicResult.png)
 
 ### Permissions, conditions and limitations to use this API
