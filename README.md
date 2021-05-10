@@ -58,6 +58,352 @@ This will appear as a commented section just before the code of that method and 
 NOTE: As a bonus, this API also some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py" located in "/MortrackAPI/linearAlgebra/".
 The documentation on how to use it is also in commented sections within the file just like in the machine learning library file (MortrackML_Library.py).
 
+### Simple and compact code example
+
+Code written into "main.py" file from the Mortrack ML API:
+
+```python
+# ------------------------------- #
+# ----- IMPORT OF LIBRARIES ----- #
+# ------------------------------- #
+# "mSL" is the library that provides all the algorithms and tools of machine
+# learning.
+from MortrackAPI.machineLearning import MortrackML_Library as mSL
+
+
+# ----------------------------- #
+# ----- IMPORT OF DATASET ----- #
+# ----------------------------- #
+# The dataset is imported/loaded.
+matrix_x = [
+     [0, 0],
+     [2, 2],
+     [4, 3],
+     [2, 4],
+     [3, 4],
+     [4, 4],
+     [5, 3],
+     [3, 5],
+     [4, 6],
+     [1, 0],
+     [2, 1],
+     [1, 3],
+     [2, 1],
+     [7, 4],
+     [4, 7],
+     [7, 3],
+     [7, 5],
+     [4, 7]
+     ]
+matrix_y = [
+     [1],
+     [1],
+     [1],
+     [1],
+     [-1],
+     [-1],
+     [-1],
+     [-1],
+     [-1],
+     [1],
+     [1],
+     [1],
+     [1],
+     [-1],
+     [-1],
+     [-1],
+     [-1],
+     [-1]
+     ]
+
+
+# ------------------------- #
+# ----- DATA MODELING ----- #
+# ------------------------- #
+# We use the Linear Support Vector Machine algorithm for the traning process.
+classification = mSL.Classification(matrix_x, matrix_y)
+modelingResults = classification.getSupportVectorMachine()
+modelCoefficients = modelingResults[0]
+acurracyFromTraning = modelingResults[1]
+predictedData = modelingResults[2]
+coefficientDistribution = modelingResults[3]
+allModeledAccuracies = modelingResults[4]
+
+
+# ------------------------------------ #
+# ----- PREDICTIONS OF THE MODEL ----- #
+# ------------------------------------ #
+# We obtain the predicted values and save them in "predictedData".
+classification.set_xSamplesList(matrix_x)
+predictedData = classification.predictSupportVectorMachine(coefficients=modelCoefficients)
+```
+
+Expected code result:
+
+```$python
+modelCoefficients = [
+             [1.4286720489864382],
+             [-0.2425903533521429],
+             [-0.22947736127905405]
+             ]
+
+acurracyFromTraining =
+94.44444444444444
+
+predictedData = [
+             [1],
+             [1],
+             [-1],
+             [1],
+             [-1],
+             [-1],
+             [-1],
+             [-1],
+             [-1],
+             [1],
+             [1],
+             [1],
+             [1],
+             [-1],
+             [-1],
+             [-1],
+             [-1],
+             [-1]
+             ]
+```
+ 
+### Complete and ideal code example (applying all machine learning best practices)
+
+Code written into "main.py" file from the Mortrack ML API:
+
+```python
+# ------------------------------- #
+# ----- IMPORT OF LIBRARIES ----- #
+# ------------------------------- #
+# "mSL" is the library that provides all the algorithms and tools of machine
+# learning.
+from MortrackAPI.machineLearning import MortrackML_Library as mSL
+# The following libraries are imported to be used for the graphical
+# visualizaiton of the results obtained.
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# ----------------------------- #
+# ----- IMPORT OF DATASET ----- #
+# ----------------------------- #
+# The dataset is imported/loaded.
+matrix_x = [
+     [0, 0],
+     [2, 2],
+     [4, 3],
+     [2, 4],
+     [3, 4],
+     [4, 4],
+     [5, 3],
+     [3, 5],
+     [4, 6],
+     [1, 0],
+     [2, 1],
+     [1, 3],
+     [2, 1],
+     [7, 4],
+     [4, 7],
+     [7, 3],
+     [7, 5],
+     [4, 7]
+     ]
+y = [
+     [1],
+     [1],
+     [1],
+     [1],
+     [0],
+     [0],
+     [0],
+     [0],
+     [0],
+     [1],
+     [1],
+     [1],
+     [1],
+     [0],
+     [0],
+     [0],
+     [0],
+     [0]
+     ]
+
+
+# ------------------------------------- #
+# ----- PREPROCESSING OF THE DATA ----- #
+# ------------------------------------- #
+# We make sure to convert the binary data from the dataset into "+1" for the
+# high states (1) and into "-1" for the low states (0) due to that the machine
+# learning algorithm to be used requires the input data to be in this format.
+matrix_y = []
+for currentRow in range(0, len(y)):
+    temporalRow = []
+    for currentColumn in range(0, len(y[0])):
+        if (y[currentRow][currentColumn] == 1):
+            temporalRow.append(1)
+        elif (y[currentRow][currentColumn] == 0):
+            temporalRow.append(-1)
+        else:
+            raise Exception('ERROR: The dataset has values that are non-binary!.')
+    matrix_y.append(temporalRow)
+
+# -------------------------- #
+# ----- DATA SPLITTING ----- #
+# -------------------------- #
+# We randomly split the data into training (70%) and test set (30%).
+dS = mSL.DatasetSplitting(matrix_x, matrix_y)
+datasetSplitResults = dS.getDatasetSplitted(testSize = 0.30, isSplittingRandom = False)
+x_train = datasetSplitResults[0]
+x_test = datasetSplitResults[1]
+y_train = datasetSplitResults[2]
+y_test = datasetSplitResults[3]
+
+# --------------------------- #
+# ----- FEATURE SCALING ----- #
+# --------------------------- #
+# We normalize the training set and we save the obtained parameters (the mean
+# and standard deviation).
+featureScaling = mSL.FeatureScaling(x_train)
+normalizedResults_xTrain = featureScaling.getStandarization()
+preferedMean_xTrain = normalizedResults_xTrain[0]
+preferedStandardDeviation_xTrain = normalizedResults_xTrain[1]
+normalizedDataPoints_xTrain = normalizedResults_xTrain[2]
+
+# We normalize the test set by using the parameters obtained in the
+# normalization process of the training set (the mean and standard deviation).
+featureScaling = mSL.FeatureScaling(x_test)
+normalizedResults = featureScaling.getStandarization(preferedMean=preferedMean_xTrain, preferedStandardDeviation=preferedStandardDeviation_xTrain, isPreferedDataUsed = True)
+normalizedDataPoints_xTest = normalizedResults[2]
+
+# ------------------------- #
+# ----- DATA MODELING ----- #
+# ------------------------- #
+# We use the Linear Support Vector Machine algorithm to train it with the
+# training set.
+classification = mSL.Classification(normalizedDataPoints_xTrain, matrix_y)
+# evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
+modelingResults = classification.getSupportVectorMachine(evtfbmip = True)
+modelCoefficients = modelingResults[0]
+acurracyFromTraning = modelingResults[1]
+predictedData = modelingResults[2]
+coefficientDistribution = modelingResults[3]
+allModeledAccuracies = modelingResults[4]
+
+
+# ------------------------------------ #
+# ----- PREDICTIONS OF THE MODEL ----- #
+# ------------------------------------ #
+# We obtain the prediction values corresponding to the test set.
+classification.set_xSamplesList(normalizedDataPoints_xTest)
+predictedValues_xTest = classification.predictSupportVectorMachine(coefficients=modelCoefficients)
+
+
+# ------------------------------------------------------------ #
+# ----- GRAPHICAL VISUALIZATION OF THE PREDICTED RESULTS ----- #
+# ------------------------------------------------------------ #
+# ----- We plot the Background ----- #
+# We obtain the matrix that will contain the data to plot the background of the
+# graph
+plt.figure()
+x1_samples = []
+x2_samples = []
+for row in range(0, len(matrix_x)):
+    x1_samples.append(matrix_x[row][0])
+    x2_samples.append(matrix_x[row][1])
+x1_distance = min(x1_samples) - max(x1_samples)
+x2_distance = min(x2_samples) - max(x2_samples)
+x1_background = np.linspace(min(x1_samples)+x1_distance, max(x1_samples)-x1_distance, num=100)
+x2_background = np.linspace(min(x2_samples)+x2_distance, max(x2_samples)-x2_distance, num=100)
+predictThisValues = []
+for row in range(0, len(x1_background)):
+    for row2 in range(0, len(x2_background)):
+        temporalRow = []
+        temporalRow.append(x1_background[row])
+        temporalRow.append(x2_background[row2])
+        predictThisValues.append(temporalRow)
+# We normalize the background-matrix by using the parameters obtained in the
+# normalization process of the training set (the mean and standard deviation).
+featureScaling = mSL.FeatureScaling(predictThisValues)
+normalizedResults = featureScaling.getStandarization(preferedMean=preferedMean_xTrain, preferedStandardDeviation=preferedStandardDeviation_xTrain, isPreferedDataUsed = True)
+normalizedDataPoints_predictThisValues = normalizedResults[2]
+# We obtain the prediction values corresponding to the backgroun-matrix data
+classification.set_xSamplesList(normalizedDataPoints_predictThisValues)
+predictedValuesForBg = classification.predictSupportVectorMachine(coefficients=modelCoefficients)
+# We create four matrixes: two of them will be used to save the coordinates of
+# the positive predicted values of the trained model and the other two for the
+# coordinates of the negative predicted values.  
+positives_x = []
+positives_y = []
+negatives_x = []
+negatives_y = []
+for row in range(0, len(predictedValuesForBg)):
+    temporalRow = []
+    if (predictedValuesForBg[row][0] == 1):
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][1])
+        positives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][0])
+        positives_x.append(temporalRow)
+    else:
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][1])
+        negatives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][0])
+        negatives_x.append(temporalRow)
+# We plot the background-matrix but with respect to the original input values
+# and not with the normalized values.
+plt.scatter(positives_x, positives_y, c='green', s=10, label='predicted positives (1)', alpha = 0.1)
+plt.scatter(negatives_x, negatives_y, c='red', s=10, label='predicted negatives (-1)', alpha = 0.1)
+
+
+# ----- We plot the predcited values by the model ----- #
+# We plot the predicted values of our currently trained model but with respect
+# to the original form of the input data (not on its normalized format).
+positives_x = []
+positives_y = []
+negatives_x = []
+negatives_y = []
+for row in range(0, len(predictedValues_xTest)):
+    temporalRow = []
+    if (predictedValues_xTest[row][0] == 1):
+        temporalRow = []
+        temporalRow.append(x_test[row][1])
+        positives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(x_test[row][0])
+        positives_x.append(temporalRow)
+    else:
+        temporalRow = []
+        temporalRow.append(x_test[row][1])
+        negatives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(x_test[row][0])
+        negatives_x.append(temporalRow)
+plt.scatter(positives_x, positives_y, c='green', s=50, label='real positives (1)')
+plt.scatter(negatives_x, negatives_y, c='red', s=50, label='real negatives (-1)')
+# Finnally, we define the desired title, the labels and the legend for the data
+# points
+plt.title('Real Results')
+plt.xlabel('x1')
+plt.ylabel('x2')
+plt.legend()
+plt.grid()
+# We show the graph with all the specifications we just declared.
+plt.show()
+```
+
+Expected code result:
+![](img/codeSampleGraphicResult.png)
+
 ### Permissions, conditions and limitations to use this API
-In accordance to the Apache License 2.0 which this API has, you can use it for commercial use, you can distribute it, modify it and/or use it in privately as long as a copy of its license is included and as long as changes to this API are documented.
-It is also requested to give credit to the author (engineer Cesar Miranda Meza, alias Mortrack) and to be aware that this license includes a limitation of liability, explicitly states that it does NOT provide any warranty and it explicitly states that it does NOT grant trademark rights.
+In accordance to the Apache License 2.0 which this API has, you can use it for commercial use, you can distribute it, modify it and/or use it in privately as long as a copy of its license is included.
+It is also requested to give credit to the author and to be aware that this license includes a limitation of liability and explicitly states that it does NOT provide any warranty.
+
