@@ -8,7 +8,7 @@ In this sense, the Mortrack_ML_API proposes a complete and different approach to
 It has the outstanding features and philosophy of having lightweight code, having transparent output trained models and providing training means on a different computer from where it is being applied.
 Furthermore, this API has been engineering in the Python programming languange and to have a similar framework as the current most popular machine learning APIs in order to provide a user-friendly and intuitive programming interface.
 
-Latest public stable version: XXX
+Latest public stable version: 1.0.0.0 (released on May 10, 2021 in master branch)
 
 ## What machine learning tools does this API provide?
 1. Functions for statistics:
