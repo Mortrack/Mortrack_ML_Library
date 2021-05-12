@@ -56,7 +56,7 @@ It is recommended as a good practice to program and use this API through that fi
 This will appear as a commented section just before the code of that method and there you you will also have at your disposal an example code.  
 5. Use the code example as a reference to apply it according to your needs in the "main.py" file identified in step 2.  
   
-NOTE: As a bonus, this API also some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py" located in "/MortrackAPI/linearAlgebra/".  
+NOTE: As a bonus, this API also has some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py" located in "/MortrackAPI/linearAlgebra/".  
 The documentation on how to use it is also in commented sections within the file just like in the machine learning library file (MortrackML_Library.py).  
   
 ### Simple and compact code example  
