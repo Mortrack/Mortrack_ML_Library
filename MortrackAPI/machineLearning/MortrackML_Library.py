@@ -114,7 +114,7 @@ class DiscreteDistribution:
         return varianceList
     
     """
-    getVariance(samplesList="will contain a matrix of rows and columns, were we want to get the Standard Deviation of each rows data point samples")
+    getStandardDeviation(samplesList="will contain a matrix of rows and columns, were we want to get the Standard Deviation of each rows data point samples")
     
     Returns a matrix (containing only 1 column for all rows within this class
     local variable "samplesList"), were each row will have its corresponding
