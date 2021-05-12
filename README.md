@@ -2,12 +2,7 @@
 # Mortrack_ML_API  
   
 ## What is Mortrack_ML_API?  
-This is an API whose creation was started from scratch by engineer Cesar Miranda Meza (alias Mortrack) on May 1, 2020 for personal use at first.  
-Without any assistance and intuitively using well-known mathematical tools, the author completed this API on May 26, 2020.  
-It was then first publicly released on May 10, 2021 so that it can help others as helped the author in many of his professional works and research.  
-In this sense, the Mortrack_ML_API proposes a complete and different approach to working with machine learning algorithms compared other APIs.  
-It has the outstanding features and philosophy of having lightweight code, having transparent output trained models and providing training means on a different computer from where it is being applied.  
-Furthermore, this API has been engineering in the Python programming languange and to have a similar framework as the current most popular machine learning APIs in order to provide a user-friendly and intuitive programming interface.  
+This is an API whose creation was started from scratch by engineer Cesar Miranda Meza (alias Mortrack) on May 1, 2020 for personal use at first. Without any assistance and intuitively using well-known mathematical tools, the author completed this API on May 26, 2020. It was then first publicly released on May 10, 2021 so that it can help others as helped the author in many of his professional works and research. In this sense, the Mortrack_ML_API proposes a complete and different approach to working with machine learning algorithms compared other APIs. It has the outstanding features and philosophy of having lightweight code, having transparent output trained models and providing training means on a different computer from where it is being applied. Furthermore, this API has been engineering in the Python programming languange and to have a similar framework as the current most popular machine learning APIs in order to provide a user-friendly and intuitive programming interface.  
   
 Latest public stable version: 1.0.0.0 (released on May 10, 2021 in master branch)  
   
@@ -49,15 +44,12 @@ Latest public stable version: 1.0.0.0 (released on May 10, 2021 in master branch
   
 ## How to use this API?  
 1. Download it either manually or through git in a terminal window on your computer and consider that it is recommended to pull from the master branch to get the latest stable version.   
-2. Open the file named "main.py" located in the root directory of the pulled/downloaded files.  
-It is recommended as a good practice to program and use this API through that file and follow the proposed machine learning programming framework.  
+2. Open the file named "main.py" located in the root directory of the pulled/downloaded files. It is recommended as a good practice to program and use this API through that file and follow the proposed machine learning programming framework.  
 3. Once you have identified that this API contains the machine learning algorithm you wish to use, inspect the file named "MortrackML_Library.py" located in "/MortrackAPI/machineLearning/".  
-4. In that file, search for the class method that has the name of the algorithm you want to use and you will be able to identify a description of how to use it (advice: click the CTRL+F buttons to use the Find tool).  
-This will appear as a commented section just before the code of that method and there you you will also have at your disposal an example code.  
+4. In that file, search for the class method that has the name of the algorithm you want to use and you will be able to identify a description of how to use it (advice: click the CTRL+F buttons to use the Find tool). This will appear as a commented section just before the code of that method and there you you will also have at your disposal an example code.  
 5. Use the code example as a reference to apply it according to your needs in the "main.py" file identified in step 2.  
   
-NOTE: As a bonus, this API also has some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py" located in "/MortrackAPI/linearAlgebra/".  
-The documentation on how to use it is also in commented sections within the file just like in the machine learning library file (MortrackML_Library.py).  
+NOTE: As a bonus, this API also has some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py" located in "/MortrackAPI/linearAlgebra/". The documentation on how to use it is also in commented sections within the file just like in the machine learning library file (MortrackML_Library.py).  
   
 ### Simple and compact code example  
   
@@ -259,5 +251,4 @@ Expected code result:
 ![](img/codeSampleGraphicResult.png)  
   
 ## Permissions, conditions and limitations to use this API  
-In accordance to the Apache License 2.0 which this API has, you can use it for commercial use, you can distribute it, modify it and/or use it in privately as long as a copy of its license is included.  
-It is also requested to give credit to the author and to be aware that this license includes a limitation of liability and explicitly states that it does NOT provide any warranty.
+In accordance to the Apache License 2.0 which this API has, you can use it for commercial use, you can distribute it, modify it and/or use it in privately as long as a copy of its license is included. It is also requested to give credit to the author and to be aware that this license includes a limitation of liability and explicitly states that it does NOT provide any warranty.
