@@ -18,7 +18,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri May 1 17:15:51 2020
-Last updated on Mon May 10 1:38:30 2021
+Last updated on Mon May 24 8:40:00 2021
 
 @author: enginer Cesar Miranda Meza (alias: Mortrack)
 """
@@ -962,7 +962,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getGaussianRegression()
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -975,7 +975,7 @@ class Regression:
          [-13.813509557296968],
          [2.302251592882836]]
         
-        acurracy =
+        accuracyFromTraining =
         99.94999999999685
         
         predictedData =
@@ -1245,7 +1245,7 @@ class Regression:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getLinearLogisticRegression(evtfbmip=True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -1254,7 +1254,7 @@ class Regression:
         modelCoefficients =
         [[4.395207586412653], [5.985854141495452], [-4.395207586412653]]
         
-        acurracy =
+        accuracyFromTraining =
         80.02122762886552
         
         predictedData =
@@ -1384,7 +1384,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getLinearRegression(isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -1393,7 +1393,7 @@ class Regression:
         modelCoefficients =
         [[8.470909090909096], [1.0242424242424237]]
         
-        acurracy =
+        accuracyFromTraining =
         97.05959379759686
         
         predictedData =
@@ -1531,7 +1531,7 @@ class Regression:
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getMultipleLinearRegression(evtfbmip = True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -1540,7 +1540,7 @@ class Regression:
         modelCoefficients =
         [[36.094678333151364], [1.030512601856226], [-1.8696429022156238], [0]]
         
-        acurracy =
+        accuracyFromTraining =
         94.91286851439088
         
         predictedData =
@@ -1894,7 +1894,7 @@ class Regression:
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getPolynomialRegression(orderOfThePolynomial=3, evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -1906,7 +1906,7 @@ class Regression:
          [2.2104758041867345e-07],
          [1.0817080022072073e-07]]
         
-        acurracy =
+        accuracyFromTraining =
         99.99999615014885
         
         predictedData =
@@ -2230,7 +2230,7 @@ class Regression:
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getMultiplePolynomialRegression(orderOfThePolynomial=4, evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -2247,7 +2247,7 @@ class Regression:
          [-0.009761974914994198],
          [-5.8006065221068606e-15]]
         
-        acurracy =
+        accuracyFromTraining =
         91.33822971744071
         
         predictedData =
@@ -2606,8 +2606,8 @@ class Regression:
     IMPORTANT NOTE: While the book "Probabilidad y estadistica para ingenieria
     & ciencias (Walpole, Myers, Myers, Ye)" describes a model whos accuracy is
     89.936% through finding a solution using the same model equation as used in
-    this method, i was able to achieve a better algorithm that finds an even
-    better solution were i was able to get an accuracy of 91.17% (see code
+    this method, i was able to achieve an algorithm that finds an even
+    better solution were i was able to get an accuracy of 90.57% (see code
     example).
     
     CODE EXAMPLE:
@@ -2655,7 +2655,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleSecondOrderPolynomialRegression(evtfbmip = True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -2669,7 +2669,7 @@ class Regression:
          [0.047676190476181546],
          [0]]
         
-        acurracy =
+        accuracyFromTraining =
         90.56977726188016
         
         predictedData =
@@ -3085,7 +3085,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleThirdOrderPolynomialRegression(evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -3103,7 +3103,7 @@ class Regression:
          [0],
          [0.0006459332618172914]]
         
-        acurracy =
+        accuracyFromTraining =
         92.07595419629946
         
         predictedData =
@@ -3527,7 +3527,7 @@ class Regression:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getLinearLogisticRegression(evtfbmip=True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -3608,7 +3608,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getGaussianRegression()
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -3696,7 +3696,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getLinearRegression(isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -3781,7 +3781,7 @@ class Regression:
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getMultipleLinearRegression(evtfbmip = True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -3850,7 +3850,7 @@ class Regression:
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getPolynomialRegression(orderOfThePolynomial=3, evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -3948,7 +3948,7 @@ class Regression:
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getMultiplePolynomialRegression(orderOfThePolynomial=4, evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -4049,7 +4049,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleSecondOrderPolynomialRegression(evtfbmip = True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -4141,7 +4141,7 @@ class Regression:
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleThirdOrderPolynomialRegression(evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -4236,7 +4236,7 @@ class Classification:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getSupportVectorMachine(evtfbmip = True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -4245,7 +4245,7 @@ class Classification:
         modelCoefficients =
         [[1.5736095873424212], [-0.26050769870994606], [-0.25468164794007475]]
         
-        acurracy =
+        accuracyFromTraining =
         88.88888888888889
         
         predictedData = [
@@ -4515,7 +4515,7 @@ class Classification:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getKernelSupportVectorMachine(kernel='gaussian', isPolynomialSVC=True, orderOfPolynomialSVC=2, orderOfPolynomialKernel=3, evtfbmip=True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -4541,7 +4541,7 @@ class Classification:
          ]
         ]
         
-        acurracy =
+        accuracyFromTraining =
         100.0
         
         predictedData = [
@@ -4943,7 +4943,7 @@ class Classification:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getSupportVectorMachine(evtfbmip = True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -5123,7 +5123,7 @@ class Classification:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getKernelSupportVectorMachine(kernel='gaussian', isPolynomialSVC=True, orderOfPolynomialSVC=2, orderOfPolynomialKernel=3, evtfbmip=True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -5442,7 +5442,7 @@ class Classification:
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getLinearLogisticRegression(evtfbmip=True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         coefficientDistribution = modelingResults[3]
         allModeledAccuracies = modelingResults[4]
@@ -5650,7 +5650,7 @@ class ReinforcementLearning:
         from MortrackAPI.machineLearning import MortrackML_Library as mSL
         rL = mSL.ReinforcementLearning(matrix_y)
         modelingResults = rL.getUpperConfidenceBound()
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         historyOfPredictedData = modelingResults[3]
             
         # ------------------------------------ #
@@ -5675,7 +5675,7 @@ class ReinforcementLearning:
         highest number of selections by the algorithm is basically going to be
         the best option among them all"
         
-        acurracy =
+        accuracyFromTraining =
         21.78
         
         historyOfPredictedData =
@@ -5806,7 +5806,7 @@ class ReinforcementLearning:
             else:
                 modelingResults = rL.getRealTimeUpperConfidenceBound(currentNumberOfSamples, sumsOfRewardsForEachArm, numberOfSelectionsOfArms)
             currentNumberOfSamples = modelingResults[0]
-            currentTotalAccuracy = modelingResults[1]
+            currentAccuracyFromTraining = modelingResults[1]
             sumsOfRewardsForEachArm = modelingResults[2]
             numberOfSelectionsOfArms = modelingResults[3]
             
@@ -5837,7 +5837,7 @@ class ReinforcementLearning:
         currentNumberOfSamples=
         10000
         
-        currentTotalAccuracy =
+        currentAccuracyFromTraining =
         21.78
         
         sumsOfRewardsForEachArm =
@@ -5891,10 +5891,10 @@ class ReinforcementLearning:
         totalRewards = 0
         for column in range(0, numberOfArmsAvailable):
             totalRewards = totalRewards + sumsOfRewardsForEachArm[0][column]
-        currentTotalAccuracy = 100*totalRewards/currentNumberOfSamples
+        currentAccuracy = 100*totalRewards/currentNumberOfSamples
         modelingResults = []
         modelingResults.append(currentNumberOfSamples)
-        modelingResults.append(currentTotalAccuracy)
+        modelingResults.append(currentAccuracy)
         modelingResults.append(sumsOfRewardsForEachArm)
         modelingResults.append(numberOfSelectionsOfArms)
         return modelingResults
@@ -5951,7 +5951,7 @@ class ReinforcementLearning:
         from MortrackAPI.machineLearning import MortrackML_Library as mSL
         rL = mSL.ReinforcementLearning(matrix_y)
         modelingResults = rL.getModifiedUpperConfidenceBound()
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         historyOfPredictedData = modelingResults[3]
             
         # ------------------------------------ #
@@ -5984,7 +5984,7 @@ class ReinforcementLearning:
         highest number of selections by the algorithm is basically going to be
         the best option among them all"
         
-        acurracy =
+        accuracyFromTraining =
         26.93
         
         historyOfPredictedData =
@@ -6140,7 +6140,7 @@ class ReinforcementLearning:
             else:
                 modelingResults = rL.getRealTimeModifiedUpperConfidenceBound(currentNumberOfSamples, sumsOfRewardsForEachSelectedArm, numberOfSelectionsOfArms, trueSumsOfRewardsForEachArm, meanList, standardDeviationList)
             currentNumberOfSamples = modelingResults[0]
-            currentTotalAccuracy = modelingResults[1]
+            currentAccuracyFromTraining = modelingResults[1]
             sumsOfRewardsForEachSelectedArm = modelingResults[2]
             numberOfSelectionsOfArms = modelingResults[3]
             trueSumsOfRewardsForEachArm = modelingResults[4]
@@ -6180,7 +6180,7 @@ class ReinforcementLearning:
         currentNumberOfSamples=
         10000
         
-        currentTotalAccuracy =
+        currentAccuracyFromTraining =
         26.93
         
         sumsOfRewardsForEachSelectedArm =
@@ -6296,10 +6296,10 @@ class ReinforcementLearning:
         totalRewards = 0
         for column in range(0, numberOfArmsAvailable):
             totalRewards = totalRewards + sumsOfRewardsForEachSelectedArm[0][column]
-        currentTotalAccuracy = 100*totalRewards/currentNumberOfSamples
+        currentAccuracy = 100*totalRewards/currentNumberOfSamples
         modelingResults = []
         modelingResults.append(currentNumberOfSamples)
-        modelingResults.append(currentTotalAccuracy)
+        modelingResults.append(currentAccuracy)
         modelingResults.append(sumsOfRewardsForEachSelectedArm)
         modelingResults.append(numberOfSelectionsOfArms)
         modelingResults.append(trueSumsOfRewardsForEachArm)
@@ -6497,7 +6497,7 @@ class DeepLearning:
         return math.exp(x)
     
     """
-    getSingleArtificialNeuron(activationFunction="the literal name, in lowercaps, of the activation function that you want to apply the neuron",
+    getSingleArtificialNeuron(activationFunction="the name, in lowercaps, of the activation function that you want to apply the neuron. The available options are: 'sigmoid', 'relu', 'tanh', 'raiseTo2ndPower', 'raiseTo3rdPower', 'raiseTo4thPower', 'raiseTo5thPower', 'raiseTo6thPower', 'exponential'.",
                               learningRate="the rate at which you want your neuron to learn (remember that 1=100% learning rate or normal learning rate)",
                               numberOfEpochs="The number of times you want your neuron to train itself",
                               stopTrainingIfAcurracy="define the % value that you want the neuron to stop training itself if such accuracy value is surpassed",
@@ -6548,7 +6548,7 @@ class DeepLearning:
         dL = mSL.DeepLearning(matrix_x, matrix_y)
         modelingResults = dL.getSingleArtificialNeuron(activationFunction='none', learningRate=0.001, numberOfEpochs=100000, stopTrainingIfAcurracy=99.9, isCustomizedInitialWeights=False, firstMatrix_w=[], isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         firstMatrix_w = modelingResults[3]
         coefficientDistribution = modelingResults[4]
@@ -6561,7 +6561,7 @@ class DeepLearning:
          [-1.7353168202914326],
          [0.7285727543658252]]
         
-        acurracy =
+        accuracyFromTraining =
         95.06995458954695
         
         predictedData =
@@ -6966,7 +6966,7 @@ class DeepLearning:
     
     """
     getArtificialNeuralNetwork(artificialNeuralNetworkDistribution="must contain an array that indicates the distribution of the desired neurons for each layer in columns. If a row-column value equals 1, this will mean that you want a neuron in that position. A 0 means otherwise",
-                               activationFunction="the literal name, in lowercaps, of the activation function that you want to apply the neuron. The activation functions must be assigned in an array accordingly to the distribution specified in argument input variable artificialNeuralNetworkDistribution",
+                               activationFunction="the name, in lowercaps, of the activation function that you want to apply the neuron. The activation functions must be assigned in an array accordingly to the distribution specified in argument input variable artificialNeuralNetworkDistribution. The available activation functions are: 'sigmoid', 'relu', 'tanh', 'raiseTo2ndPower', 'raiseTo3rdPower', 'raiseTo4thPower', 'raiseTo5thPower', 'raiseTo6thPower', 'exponential'.",
                                learningRate="the rate at which you want your Artificial Neural Network to learn (remember that 1=100% learning rate or normal learning rate)",
                                numberOfEpochs="The number of times you want your Artificial Neural Network to train itself",
                                stopTrainingIfAcurracy="define the % value that you want the neuron to stop training itself if such accuracy value is surpassed",
@@ -7012,7 +7012,7 @@ class DeepLearning:
               ]
         modelingResults = dL.getArtificialNeuralNetwork(artificialNeuralNetworkDistribution=aNND, activationFunction=aF, learningRate=0.1, numberOfEpochs=10000, stopTrainingIfAcurracy=99.9, isCustomizedInitialWeights=False, firstMatrix_w=[], isClassification=True)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         firstMatrix_w = modelingResults[3]
         coefficientDistribution = modelingResults[4]
@@ -7029,7 +7029,7 @@ class DeepLearning:
           [4.181437529101815, 2.5824655964639742, -3.3907451300458136]
         ]
         
-        acurracy =
+        accuracyFromTraining =
         98.94028954483407
         
         predictedData =
@@ -7909,7 +7909,7 @@ class DeepLearning:
     
     """
     predictSingleArtificialNeuron(coefficients="We give the Linear Logistic mathematical coefficients that we want to predict with",
-                                  activationFunction="the literal name, in lowercaps, of the activation function that you want to apply the neuron",
+                                  activationFunction="the name, in lowercaps, of the activation function that you want to apply the neuron. The available options are: 'sigmoid', 'relu', 'tanh', 'raiseTo2ndPower', 'raiseTo3rdPower', 'raiseTo4thPower', 'raiseTo5thPower', 'raiseTo6thPower', 'exponential'.",
                                   isThreshold="Set to True if you want to predict output values of a classification neuron. False if otherwise."
                                   threshold="We give a value from 0 to 1 to indicate the threshold that we want to apply to classify the predicted data with the Linear Logistic Classifier")
     
@@ -7955,7 +7955,7 @@ class DeepLearning:
         dL = mSL.DeepLearning(matrix_x, matrix_y)
         modelingResults = dL.getSingleArtificialNeuron(activationFunction='none', learningRate=0.001, numberOfEpochs=100000, stopTrainingIfAcurracy=99.9, isCustomizedInitialWeights=False, firstMatrix_w=[], isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         firstMatrix_w = modelingResults[3]
         coefficientDistribution = modelingResults[4]
@@ -8058,7 +8058,7 @@ class DeepLearning:
     
     """
     predictArtificialNeuralNetwork(coefficients="We give the Linear Logistic mathematical coefficients that we want to predict with",
-                                  activationFunction="the literal name, in lowercaps, of the activation function that you want to apply the neuron",
+                                  activationFunction="the name, in lowercaps, of the activation function that you want to apply the neuron. The activation functions must be assigned in an array accordingly to the distribution specified in argument input variable coefficients. The available activation functions are: 'sigmoid', 'relu', 'tanh', 'raiseTo2ndPower', 'raiseTo3rdPower', 'raiseTo4thPower', 'raiseTo5thPower', 'raiseTo6thPower', 'exponential'.",
                                   isThreshold="Set to True if you want to predict output values of a classification neuron. False if otherwise."
                                   threshold="We give a value from 0 to 1 to indicate the threshold that we want to apply to classify the predicted data with the Linear Logistic Classifier")
     
@@ -8113,7 +8113,7 @@ class DeepLearning:
               ]
         modelingResults = dL.getArtificialNeuralNetwork(artificialNeuralNetworkDistribution=aNND, activationFunction=aF, learningRate=0.00001, numberOfEpochs=100000, stopTrainingIfAcurracy=99.9, isCustomizedInitialWeights=False, firstMatrix_w=[], isClassification=False)
         modelCoefficients = modelingResults[0]
-        acurracy = modelingResults[1]
+        accuracyFromTraining = modelingResults[1]
         predictedData = modelingResults[2]
         firstMatrix_w = modelingResults[3]
         coefficientDistribution = modelingResults[4]
