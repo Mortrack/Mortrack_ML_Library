@@ -2,9 +2,9 @@
 # --------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------- #
 # COMPLETITION DATE: May 26, 2020.
-# AUTHOR OF THE MORTRACK ML API: Engineer Cesar Miranda Meza (alias: Mortrack).
+# AUTHOR OF THE MORTRACK ML library: Engineer Cesar Miranda Meza (alias: Mortrack).
 #
-# Hoping that the Mortrack ML API is useful for your projects, the following
+# Hoping that the Mortrack ML library is useful for your projects, the following
 # template is proposed by the engineer Cesar Miranda Meza (alias Mortrack) as
 # a best practice to work with machine learning algorithms. Enjoy and have fun!
 # --------------------------------------------------------------------------- #
@@ -17,10 +17,10 @@
 # ------------------------------- #
 # "mLAL" is the library that provides some of the mathematical functions of
 # linear algebra.
-from MortrackAPI.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
+from MortrackLibrary.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
 # "mSL" is the library that provides all the algorithms and tools of machine
 # learning.
-from MortrackAPI.machineLearning import MortrackML_Library as mSL
+from MortrackLibrary.machineLearning import MortrackML_Library as mSL
 
 
 # ----------------------------- #
