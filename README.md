@@ -4,7 +4,7 @@
 ## What is Mortrack_ML_Library?  
 This is a library whose creation was started from scratch by the engineer Cesar Miranda Meza (alias Mortrack) on May 1, 2020 for personal use at first and without any scientific formality. Without any assistance and intuitively using well known mathematical tools, the author completed this library on May 26, 2020. It was then first publicly released on May 10, 2021 so that it can help others as it helped the author in many of his professional works and research. In this sense, the Mortrack_ML_Library proposes a complete and different approach to working with machine learning algorithms with respect to other librarys. It has the outstanding features and philosophy of having lightweight code, having transparent output trained models and providing its applicability on on a different computer from where it is being applied even without the use of this library. Furthermore, this library has been engineering in the Python programming languange and to have a similar framework as the current most popular machine learning librarys in order to provide a user friendly and intuitive programming interface.  
   
-Latest public stable version: 1.0.0.1 (released on May 10, 2021 in master branch)  
+Latest public stable version: 1.0.0.2 (released on September 20, 2021 in master branch)  
   
 ## What machine learning tools does this Library provide?  
 1. Functions for statistics:  
