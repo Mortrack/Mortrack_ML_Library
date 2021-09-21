@@ -86,7 +86,7 @@ class MatrixMath:
     considered the first matrix and matrix "B" is considered the second one.
     
     CODE EXAMPLE:
-        from MortrackAPI.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
+        from MortrackLibrary.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
         matrixMath = mLAL.MatrixMath()
         matrix1 = [[-2, 3], [-5, 1], [0, -6]]
         matrix2 = [[1, -5, 0], [-8, 9, 2]]
@@ -118,7 +118,7 @@ class MatrixMath:
     second one.
     
     CODE EXAMPLE:
-        from MortrackAPI.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
+        from MortrackLibrary.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
         matrixMath = mLAL.MatrixMath()
         matrix1 = [[1, 2, 1], [3, 4, 1]]
         matrix2 = [[5, 6], [7, 8], [9, 10]]
@@ -148,7 +148,7 @@ class MatrixMath:
     This method calculates the inverse matrix of the inputed matrix.
     
     CODE EXAMPLE:
-        from MortrackAPI.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
+        from MortrackLibrary.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
         matrixMath = mLAL.MatrixMath()
         matrix_x = [[1, 2], [3, 4]]
         inversedMatrix_x = matrixMath.getInverse(matrix_x)
@@ -201,7 +201,7 @@ class MatrixMath:
     arguments of this method.
     
     CODE EXAMPLE:
-        from MortrackAPI.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
+        from MortrackLibrary.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
         m = [[1,2,3,4], [5,6,7,8], [9,10,11,12]]
         matrixMath = mLAL.MatrixMath()
         transposedMatrix = matrixMath.getTransposedMatrix(m)
@@ -227,7 +227,7 @@ class MatrixMath:
     This method creates a unitary matrix with a specified length.
     
     CODE EXAMPLE:
-        from MortrackAPI.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
+        from MortrackLibrary.linearAlgebra import MortrackLinearAlgebraLibrary as mLAL
         matrixMath = mLAL.MatrixMath()
         unitaryMatrix = matrixMath.getUnitaryMatrix(4)
 

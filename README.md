@@ -1,12 +1,12 @@
 
-# Mortrack_ML_API  
+# Mortrack_ML_Library  
   
-## What is Mortrack_ML_API?  
-This is an API whose creation was started from scratch by engineer Cesar Miranda Meza (alias Mortrack) on May 1, 2020 for personal use at first. Without any assistance and intuitively using well-known mathematical tools, the author completed this API on May 26, 2020. It was then first publicly released on May 10, 2021 so that it can help others as helped the author in many of his professional works and research. In this sense, the Mortrack_ML_API proposes a complete and different approach to working with machine learning algorithms compared other APIs. It has the outstanding features and philosophy of having lightweight code, having transparent output trained models and providing training means on a different computer from where it is being applied. Furthermore, this API has been engineering in the Python programming languange and to have a similar framework as the current most popular machine learning APIs in order to provide a user-friendly and intuitive programming interface.  
+## What is Mortrack_ML_Library?  
+This is a library whose creation was started from scratch by the engineer Cesar Miranda Meza (alias Mortrack) on May 1, 2020 for personal use at first and without any scientific formality. Without any assistance and intuitively using well known mathematical tools, the author completed this library on May 26, 2020. It was then first publicly released on May 10, 2021 so that it can help others as it helped the author in many of his professional works and research. In this sense, the Mortrack_ML_Library proposes a complete and different approach to working with machine learning algorithms with respect to other librarys. It has the outstanding features and philosophy of having lightweight code, having transparent output trained models and providing its applicability on on a different computer from where it is being applied even without the use of this library. Furthermore, this library has been engineering in the Python programming languange and to have a similar framework as the current most popular machine learning librarys in order to provide a user friendly and intuitive programming interface.  
   
 Latest public stable version: 1.0.0.1 (released on May 10, 2021 in master branch)  
   
-## What machine learning tools does this API provide?  
+## What machine learning tools does this Library provide?  
 1. Functions for statistics:  
     - **getMean():** Function to calculate the mean in 1 or more lists contained within an array.  
     - **getVariance():** Function to calculate the variance in 1 or more lists contained within an array.  
@@ -33,7 +33,7 @@ Latest public stable version: 1.0.0.1 (released on May 10, 2021 in master branch
         - **getSupportVectorMachine()** and **predictSupportVectorMachine():** Support vector machine classification without hyperparameters.  
         - **getKernelSupportVectorMachine()** and **predictKernelSupportVectorMachine():** Kernel support vector machine classification without hyperparameters.  
         - **getLinearLogisticRegression()** and **predictLinearLogisticClassifier():** Classification with linear logistic regression without hyperparameters.  
-   - Functions for reinforcement learning methods (the following do not have a predict method):  
+   - Functions for reinforcement learning methods (the following do not have a predict method due to their nature):  
         - **getUpperConfidenceBound():** Upper confidence bound with the capacity to learn from an entire complete history.  
         - **getRealTimeUpperConfidenceBound():** Upper confidence bound with the capacity to learn from real-time data.  
         - **getModifiedUpperConfidenceBound():** Modified upper confidence bound with the capacity to learn from an entire complete history (prediction intervals are used within the logic of the algorithm).  
@@ -44,18 +44,18 @@ Latest public stable version: 1.0.0.1 (released on May 10, 2021 in master branch
         
 			NOTE: The available transformation functions for the deep learning methods are: 'sigmoid', 'relu', 'tanh', 'raiseTo2ndPower', 'raiseTo3rdPower', 'raiseTo4thPower', 'raiseTo5thPower', 'raiseTo6thPower', 'exponential'.
   
-## How to use this API?  
-1. Download it either manually or through git in a terminal window on your computer and consider that it is recommended to pull from the master branch to get the latest stable version.   
-2. Open the file named "main.py" located in the root directory of the pulled/downloaded files. It is recommended as a good practice to program and use this API through that file and follow the proposed machine learning programming framework.  
-3. Once you have identified that this API contains the machine learning algorithm you wish to use, inspect the file named "MortrackML_Library.py" located in "/MortrackAPI/machineLearning/".  
-4. In that file, search for the class method that has the name of the algorithm you want to use and you will be able to identify a description of how to use it (advice: click the CTRL+F buttons to use the Find tool). This will appear as a commented section just before the code of that method and there you you will also have at your disposal an example code.  
-5. Use the code example as a reference to apply it according to your needs in the "main.py" file identified in step 2.  
+## How to use this Library?  
+1. Download it either manually or through git in a terminal window on your computer ($ git clone https://github.com/Mortrack/Mortrack_ML_Library.git) and it is highly recommended to use latest version from the master branch to get the latest stable version.   
+2. Open the file named "main.py" located in the root directory of the downloaded files. It is recommended as a good practice to program and use this Library through that file and follow the proposed machine learning programming framework, which is described with comments in such file.  
+3. Once you have identified that this Library contains the machine learning algorithm you wish to use, inspect the file named "MortrackML_Library.py" located in "/MortrackLibrary/machineLearning/".  
+4. In that file, search for the class method that has the name of the algorithm you want to use, which will provide a description of how to use (advice: click the CTRL+F buttons to use the Find tool). This will appear as a commented section just before the code of that method and there you you will also have at your disposal an example code.  
+5. Copy the code example as a reference and paste it in the "main.py" file (identified in step 2) to then edit it as your application requires.
   
-NOTE: As a bonus, this API also has some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py" located in "/MortrackAPI/linearAlgebra/". The documentation on how to use it is also in commented sections within the file just like in the machine learning library file (MortrackML_Library.py).  
+NOTE: As a bonus, this Library also has some linear algebra mathematical tools that you can find in the file named "MortrackLinearAlgebraLibrary.py", which is located in "/MortrackLibrary/linearAlgebra/". The documentation on how to use them is also in commented sections within the file, just as explained for the machine learning library file (MortrackML_Library.py) in step 4.  
   
 ### Simple and compact code example  
   
-Code written into "main.py" file from the Mortrack ML API:  
+Code written into "main.py" file from the Mortrack ML Library:  
   
 ```python  
 # ------------------------------- #  
@@ -63,16 +63,15 @@ Code written into "main.py" file from the Mortrack ML API:
 # ------------------------------- #  
 # "mSL" is the library that provides all the algorithms and tools of machine  
 # learning.  
-from MortrackAPI.machineLearning import MortrackML_Library as mSL  
+from MortrackLibrary.machineLearning import MortrackML_Library as mSL  
   
   
 # ----------------------------- #  
 # ----- IMPORT OF DATASET ----- #  
 # ----------------------------- #  
 # The dataset is imported/loaded.  
-matrix_x = [  
- [0, 0], [2, 2], [4, 3], [2, 4], [3, 4], [4, 4], [5, 3], [3, 5], [4, 6], [1, 0], [2, 1], [1, 3], [2, 1], [7, 4], [4, 7], [7, 3], [7, 5], [4, 7] ]matrix_y = [  
- [1], [1], [1], [1], [-1], [-1], [-1], [-1], [-1], [1], [1], [1], [1], [-1], [-1], [-1], [-1], [-1] ]  
+matrix_x = [  [0, 0], [2, 2], [4, 3], [2, 4], [3, 4], [4, 4], [5, 3], [3, 5], [4, 6], [1, 0], [2, 1], [1, 3], [2, 1], [7, 4], [4, 7], [7, 3], [7, 5], [4, 7] ]
+matrix_y = [  [1], [1], [1], [1], [-1], [-1], [-1], [-1], [-1], [1], [1], [1], [1], [-1], [-1], [-1], [-1], [-1] ]  
   
 # ------------------------- #  
 # ----- DATA MODELING ----- #  
@@ -109,7 +108,7 @@ predictedData = [
 
 ### Complete and ideal code example (applying all machine learning best practices)  
   
-Code written into "main.py" file from the Mortrack ML API:  
+Code written into "main.py" file from the Mortrack ML Library:  
   
 ```python  
 # ------------------------------- #  
@@ -117,7 +116,7 @@ Code written into "main.py" file from the Mortrack ML API:
 # ------------------------------- #  
 # "mSL" is the library that provides all the algorithms and tools of machine  
 # learning.  
-from MortrackAPI.machineLearning import MortrackML_Library as mSL  
+from MortrackLibrary.machineLearning import MortrackML_Library as mSL  
 # The following libraries are imported to be used for the graphical  
 # visualizaiton of the results obtained.  
 import matplotlib.pyplot as plt  
@@ -128,9 +127,8 @@ import numpy as np
 # ----- IMPORT OF DATASET ----- #  
 # ----------------------------- #  
 # The dataset is imported/loaded.  
-matrix_x = [  
- [0, 0], [2, 2], [4, 3], [2, 4], [3, 4], [4, 4], [5, 3], [3, 5], [4, 6], [1, 0], [2, 1], [1, 3], [2, 1], [7, 4], [4, 7], [7, 3], [7, 5], [4, 7] ]y = [  
- [1], [1], [1], [1], [0], [0], [0], [0], [0], [1], [1], [1], [1], [0], [0], [0], [0], [0] ]  
+matrix_x = [  [0, 0], [2, 2], [4, 3], [2, 4], [3, 4], [4, 4], [5, 3], [3, 5], [4, 6], [1, 0], [2, 1], [1, 3], [2, 1], [7, 4], [4, 7], [7, 3], [7, 5], [4, 7] ]
+y = [  [1], [1], [1], [1], [0], [0], [0], [0], [0], [1], [1], [1], [1], [0], [0], [0], [0], [0] ]  
   
 # ------------------------------------- #  
 # ----- PREPROCESSING OF THE DATA ----- #  
@@ -140,7 +138,16 @@ matrix_x = [
 # learning algorithm to be used requires the input data to be in this format.  
 matrix_y = []  
 for currentRow in range(0, len(y)):  
- temporalRow = [] for currentColumn in range(0, len(y[0])): if (y[currentRow][currentColumn] == 1): temporalRow.append(1) elif (y[currentRow][currentColumn] == 0): temporalRow.append(-1) else: raise Exception('ERROR: The dataset has values that are non-binary!.') matrix_y.append(temporalRow)  
+    temporalRow = []
+    for currentColumn in range(0, len(y[0])):
+        if (y[currentRow][currentColumn] == 1):
+            temporalRow.append(1)
+        elif (y[currentRow][currentColumn] == 0):
+            temporalRow.append(-1)
+        else:
+            raise Exception('ERROR: The dataset has values that are non-binary!.')
+    matrix_y.append(temporalRow)
+        
 # -------------------------- #  
 # ----- DATA SPLITTING ----- #  
 # -------------------------- #  
@@ -202,13 +209,20 @@ plt.figure()
 x1_samples = []  
 x2_samples = []  
 for row in range(0, len(matrix_x)):  
- x1_samples.append(matrix_x[row][0]) x2_samples.append(matrix_x[row][1])x1_distance = min(x1_samples) - max(x1_samples)  
+    x1_samples.append(matrix_x[row][0])
+    x2_samples.append(matrix_x[row][1])
+x1_distance = min(x1_samples) - max(x1_samples)  
 x2_distance = min(x2_samples) - max(x2_samples)  
 x1_background = np.linspace(min(x1_samples)+x1_distance, max(x1_samples)-x1_distance, num=100)  
 x2_background = np.linspace(min(x2_samples)+x2_distance, max(x2_samples)-x2_distance, num=100)  
 predictThisValues = []  
 for row in range(0, len(x1_background)):  
- for row2 in range(0, len(x2_background)): temporalRow = [] temporalRow.append(x1_background[row]) temporalRow.append(x2_background[row2]) predictThisValues.append(temporalRow)# We normalize the background-matrix by using the parameters obtained in the  
+    for row2 in range(0, len(x2_background)):
+        temporalRow = []
+        temporalRow.append(x1_background[row])
+        temporalRow.append(x2_background[row2])
+        predictThisValues.append(temporalRow)
+# We normalize the background-matrix by using the parameters obtained in the  
 # normalization process of the training set (the mean and standard deviation).  
 featureScaling = mSL.FeatureScaling(predictThisValues)  
 normalizedResults = featureScaling.getStandarization(preferedMean=preferedMean_xTrain, preferedStandardDeviation=preferedStandardDeviation_xTrain, isPreferedDataUsed = True)  
@@ -218,12 +232,28 @@ classification.set_xSamplesList(normalizedDataPoints_predictThisValues)
 predictedValuesForBg = classification.predictSupportVectorMachine(coefficients=modelCoefficients)  
 # We create four matrixes: two of them will be used to save the coordinates of  
 # the positive predicted values of the trained model and the other two for the  
-# coordinates of the negative predicted values. positives_x = []  
+# coordinates of the negative predicted values.
+positives_x = []  
 positives_y = []  
 negatives_x = []  
 negatives_y = []  
 for row in range(0, len(predictedValuesForBg)):  
- temporalRow = [] if (predictedValuesForBg[row][0] == 1): temporalRow = [] temporalRow.append(predictThisValues[row][1]) positives_y.append(temporalRow) temporalRow = [] temporalRow.append(predictThisValues[row][0]) positives_x.append(temporalRow) else: temporalRow = [] temporalRow.append(predictThisValues[row][1]) negatives_y.append(temporalRow) temporalRow = [] temporalRow.append(predictThisValues[row][0]) negatives_x.append(temporalRow)# We plot the background-matrix but with respect to the original input values  
+    temporalRow = []
+    if (predictedValuesForBg[row][0] == 1):
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][1])
+        positives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][0])
+        positives_x.append(temporalRow)
+    else:
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][1])
+        negatives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(predictThisValues[row][0])
+        negatives_x.append(temporalRow)
+# We plot the background-matrix but with respect to the original input values  
 # and not with the normalized values.  
 plt.scatter(positives_x, positives_y, c='green', s=10, label='predicted positives (1)', alpha = 0.1)  
 plt.scatter(negatives_x, negatives_y, c='red', s=10, label='predicted negatives (-1)', alpha = 0.1)  
@@ -237,7 +267,22 @@ positives_y = []
 negatives_x = []  
 negatives_y = []  
 for row in range(0, len(predictedValues_xTest)):  
- temporalRow = [] if (predictedValues_xTest[row][0] == 1): temporalRow = [] temporalRow.append(x_test[row][1]) positives_y.append(temporalRow) temporalRow = [] temporalRow.append(x_test[row][0]) positives_x.append(temporalRow) else: temporalRow = [] temporalRow.append(x_test[row][1]) negatives_y.append(temporalRow) temporalRow = [] temporalRow.append(x_test[row][0]) negatives_x.append(temporalRow)plt.scatter(positives_x, positives_y, c='green', s=50, label='real positives (1)')  
+    temporalRow = []
+    if (predictedValues_xTest[row][0] == 1):
+        temporalRow = []
+        temporalRow.append(x_test[row][1])
+        positives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(x_test[row][0])
+        positives_x.append(temporalRow)
+    else:
+        temporalRow = []
+        temporalRow.append(x_test[row][1])
+        negatives_y.append(temporalRow)
+        temporalRow = []
+        temporalRow.append(x_test[row][0])
+        negatives_x.append(temporalRow)
+plt.scatter(positives_x, positives_y, c='green', s=50, label='real positives (1)')  
 plt.scatter(negatives_x, negatives_y, c='red', s=50, label='real negatives (-1)')  
 # Finnally, we define the desired title, the labels and the legend for the data  
 # points  
@@ -247,12 +292,12 @@ plt.ylabel('x2')
 plt.legend()  
 plt.grid()  
 # We show the graph with all the specifications we just declared.  
-plt.show()  
+plt.show() 
 ```  
   
 Expected code result:  
   
 ![](img/codeSampleGraphicResult.png)  
   
-## Permissions, conditions and limitations to use this API  
-In accordance to the Apache License 2.0 which this API has, you can use it for commercial use, you can distribute it, modify it and/or use it in privately as long as a copy of its license is included. It is also requested to give credit to the author and to be aware that this license includes a limitation of liability and explicitly states that it does NOT provide any warranty.
+## Permissions, conditions and limitations to use this Library  
+In accordance to the Apache License 2.0 which this Library has, it can used for commercial purposes, you can distribute it, modify it and/or use it privately as long as a copy of its license is included. It is also requested to give credit to the author and to be aware that this license includes a limitation of liability and explicitly states that it does NOT provide any warranty.

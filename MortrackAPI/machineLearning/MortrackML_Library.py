@@ -51,7 +51,7 @@ class DiscreteDistribution:
          [4,5,6],
          [1,5,9]        
         ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dD = mSL.DiscreteDistribution()
         result = dD.getMean(matrix_x)
         
@@ -88,7 +88,7 @@ class DiscreteDistribution:
          [1,5,9],
          [1,4,7]
         ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dD = mSL.DiscreteDistribution()
         result = dD.getVariance(matrix_x)
         
@@ -128,7 +128,7 @@ class DiscreteDistribution:
          [1,5,9],
          [1,4,7]
         ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dD = mSL.DiscreteDistribution()
         result = dD.getStandardDeviation(matrix_x)
         
@@ -183,7 +183,7 @@ class Tdistribution:
          [1,5,9],
          [1,4,7]
         ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         tD = mSL.Tdistribution(desiredTrustInterval=95)
         result = tD.getCriticalValue(len(matrix_x[0]))
         
@@ -269,7 +269,7 @@ class TrustIntervals:
          [1,5,9],
          [1,4,7]
         ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         tI = mSL.TrustIntervals()
         dD = mSL.DiscreteDistribution()
         meanList = dD.getMean(matrix_x)
@@ -333,7 +333,7 @@ class TrustIntervals:
          [1,5,9],
          [1,4,7]
         ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         tI = mSL.TrustIntervals()
         dD = mSL.DiscreteDistribution()
         meanList = dD.getMean(matrix_x)
@@ -404,7 +404,7 @@ class Combinations:
     Returns all the possible positions of the elements contained within a list
     
     EXAMPLE CODE:
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         combinations = mSL.Combinations([0,1,2])
         result = combinations.getPositionCombinationsList()
         
@@ -449,7 +449,7 @@ class Combinations:
     this method works.
     
     EXAMPLE CODE:
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         combinations = mSL.Combinations([0,1,2])
         result = combinations.getCustomizedPermutationList()
         
@@ -473,7 +473,7 @@ class Combinations:
 """
 DatasetSplitting("x independent variable datapoints to model", "y dependent variable datapoints to model")
 
-The DatasetSplitting Library allows you to split your dataset into training and
+The DatasetSplitting library allows you to split your dataset into training and
 test set.
 """    
 class DatasetSplitting:
@@ -529,7 +529,7 @@ class DatasetSplitting:
                 [125, 27.5]
                 ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dS = mSL.DatasetSplitting(matrix_x, matrix_y)
         datasetSplitResults = dS.getDatasetSplitted(testSize = 0.10, isSplittingRandom = False)
         x_train = datasetSplitResults[0]
@@ -634,7 +634,7 @@ class DatasetSplitting:
 """
 FeatureScaling("datapoints you want to apply Feature Scaling to")
 
-The Feature Scaling Library gives several methods to apply feature scaling
+The Feature Scaling library gives several methods to apply feature scaling
 techniques to your datasets.
 """    
 class FeatureScaling:
@@ -671,7 +671,7 @@ class FeatureScaling:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         featureScaling = mSL.FeatureScaling(matrix_x)
         normalizedResults = featureScaling.getStandarization()
         preferedMean = normalizedResults[0]
@@ -727,7 +727,7 @@ class FeatureScaling:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         featureScaling = mSL.FeatureScaling(matrix_x)
         mean = [[100, 21.25]]
         standardDeviation = [[21.004201260420146, 4.393343895967546]]
@@ -834,7 +834,7 @@ class FeatureScaling:
                 [0.0, 1.422606594884729],
                 [1.1902380714238083, 1.422606594884729]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         featureScaling = mSL.FeatureScaling(matrix_x)
         mean = [[100, 21.25]]
         standardDeviation = [[21.004201260420146, 4.393343895967546]]
@@ -898,7 +898,7 @@ class FeatureScaling:
         
     
 """
-The Regression Library gives several different types of coeficients to model
+The Regression library gives several different types of coeficients to model
 a required data. But notice that the arguments of this class are expected to be
 the mean values of both the "x" and the "y" values.
 
@@ -958,7 +958,7 @@ class Regression:
              [0]
              ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getGaussianRegression()
         modelCoefficients = modelingResults[0]
@@ -1240,7 +1240,7 @@ class Regression:
                 [1]
                 ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getLinearLogisticRegression(evtfbmip=True)
@@ -1380,7 +1380,7 @@ class Regression:
                 [17.3],
                 [17.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getLinearRegression(isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -1526,7 +1526,7 @@ class Regression:
                 [1.72, 3.12, 7.6],
                 [1.7, 5.3, 8.2]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getMultipleLinearRegression(evtfbmip = True, isClassification=False)
@@ -1888,7 +1888,7 @@ class Regression:
                 [-0.6],
                 [-0.55]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # "orderOfThePolynomial" = "whole number to represent the desired order of the polynomial model to find"
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
@@ -2224,7 +2224,7 @@ class Regression:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # "orderOfThePolynomial" = "whole number to represent the desired order of the polynomial model to find"
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
@@ -2651,7 +2651,7 @@ class Regression:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleSecondOrderPolynomialRegression(evtfbmip = True, isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -3081,7 +3081,7 @@ class Regression:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleThirdOrderPolynomialRegression(evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -3522,7 +3522,7 @@ class Regression:
                 [1]
                 ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getLinearLogisticRegression(evtfbmip=True)
@@ -3604,7 +3604,7 @@ class Regression:
              [0],
              [0]
              ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getGaussianRegression()
         modelCoefficients = modelingResults[0]
@@ -3692,7 +3692,7 @@ class Regression:
                 [17.3],
                 [17.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getLinearRegression(isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -3776,7 +3776,7 @@ class Regression:
                 [1.72, 3.12, 7.6],
                 [1.7, 5.3, 8.2]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getMultipleLinearRegression(evtfbmip = True, isClassification=False)
@@ -3844,7 +3844,7 @@ class Regression:
                 [-0.6],
                 [-0.55]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # "orderOfThePolynomial" = "whole number to represent the desired order of the polynomial model to find"
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
@@ -3942,7 +3942,7 @@ class Regression:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # "orderOfThePolynomial" = "whole number to represent the desired order of the polynomial model to find"
         # "evtfbmip" stands for "Eliminate Variables To Find Better Model If Possible"
@@ -4045,7 +4045,7 @@ class Regression:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleSecondOrderPolynomialRegression(evtfbmip = True, isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -4137,7 +4137,7 @@ class Regression:
                 [100, 27.5],
                 [125, 27.5]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         modelingResults = regression.getCustomizedMultipleThirdOrderPolynomialRegression(evtfbmip=True, isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -4186,7 +4186,7 @@ class Regression:
 """
 Classification("x independent variable datapoints to model", "y dependent variable datapoints to model")
 
-The Classification Library gives several methods to be able to get the best
+The Classification library gives several methods to be able to get the best
 fitting classification model to predict a determined classification problem.
 """    
 class Classification:
@@ -4274,7 +4274,7 @@ class Classification:
         matrix_y = self.y_samplesList
         for row in range(0, numberOfRows):
             if ((self.y_samplesList[row][0]!=1) and (self.y_samplesList[row][0]!=-1)):
-                raise Exception('ERROR: One of the dependent (y) data points does not have exactly a 1 or a -1 as value. Note that in this API, the Support Vector Machine method needs to process your data to have either +1 or -1 as values.')
+                raise Exception('ERROR: One of the dependent (y) data points does not have exactly a 1 or a -1 as value. Note that in this library, the Support Vector Machine method needs to process your data to have either +1 or -1 as values.')
         # We apply a Multiple Linear Regression to get the coefficient values
         # for our Linear Support Vector Machine Model
         from . import MortrackML_Library as mSL
@@ -4510,7 +4510,7 @@ class Classification:
              [-1]
              ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         classification = mSL.Classification(matrix_x, matrix_y)
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getKernelSupportVectorMachine(kernel='gaussian', isPolynomialSVC=True, orderOfPolynomialSVC=2, orderOfPolynomialKernel=3, evtfbmip=True)
@@ -4938,7 +4938,7 @@ class Classification:
              [-1]
              ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         classification = mSL.Classification(matrix_x, matrix_y)
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getSupportVectorMachine(evtfbmip = True)
@@ -5118,7 +5118,7 @@ class Classification:
                 temporalRow.append(x[row][column])
             matrix_x.append(temporalRow)
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         classification = mSL.Classification(matrix_x, matrix_y)
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = classification.getKernelSupportVectorMachine(kernel='gaussian', isPolynomialSVC=True, orderOfPolynomialSVC=2, orderOfPolynomialKernel=3, evtfbmip=True)
@@ -5437,7 +5437,7 @@ class Classification:
                 [1]
                 ]
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         regression = mSL.Regression(matrix_x, matrix_y)
         # evtfbmip stands for "Eliminate Variables To Find Better Model If Possible"
         modelingResults = regression.getLinearLogisticRegression(evtfbmip=True)
@@ -5647,7 +5647,7 @@ class ReinforcementLearning:
                 temporalRow.append(dataset.iloc[row,column])
             matrix_y.append(temporalRow)
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         rL = mSL.ReinforcementLearning(matrix_y)
         modelingResults = rL.getUpperConfidenceBound()
         accuracyFromTraining = modelingResults[1]
@@ -5786,7 +5786,7 @@ class ReinforcementLearning:
     Upper Confidence Bound.
     
     CODE EXAMPLE:
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         import pandas as pd
         dataset = pd.read_csv('Ads_CTR_Optimisation.csv')
         matrix_y = []
@@ -5948,7 +5948,7 @@ class ReinforcementLearning:
                 temporalRow.append(dataset.iloc[row,column])
             matrix_y.append(temporalRow)
         
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         rL = mSL.ReinforcementLearning(matrix_y)
         modelingResults = rL.getModifiedUpperConfidenceBound()
         accuracyFromTraining = modelingResults[1]
@@ -6120,7 +6120,7 @@ class ReinforcementLearning:
               to know if his actual pick was sucessful or not.
     
     CODE EXAMPLE:
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         import pandas as pd
         dataset = pd.read_csv('Ads_CTR_Optimisation.csv')
         matrix_y = []
@@ -6544,7 +6544,7 @@ class DeepLearning:
                 [1.72, 3.12, 7.6],
                 [1.7, 5.3, 8.2]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dL = mSL.DeepLearning(matrix_x, matrix_y)
         modelingResults = dL.getSingleArtificialNeuron(activationFunction='none', learningRate=0.001, numberOfEpochs=100000, stopTrainingIfAcurracy=99.9, isCustomizedInitialWeights=False, firstMatrix_w=[], isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -6999,7 +6999,7 @@ class DeepLearning:
                 [0, 1, 1],
                 [1, 0, 0]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dL = mSL.DeepLearning(matrix_x, matrix_y)
         # We will indicate that we want 2 neurons in Layer1 and 1 neuron in Layer2
         aNND = [
@@ -7951,7 +7951,7 @@ class DeepLearning:
                 [1.72, 3.12, 7.6],
                 [1.7, 5.3, 8.2]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dL = mSL.DeepLearning(matrix_x, matrix_y)
         modelingResults = dL.getSingleArtificialNeuron(activationFunction='none', learningRate=0.001, numberOfEpochs=100000, stopTrainingIfAcurracy=99.9, isCustomizedInitialWeights=False, firstMatrix_w=[], isClassification=False)
         modelCoefficients = modelingResults[0]
@@ -8100,7 +8100,7 @@ class DeepLearning:
                 [1.72, 3.12, 7.6],
                 [1.7, 5.3, 8.2]
                 ]
-        from MortrackAPI.machineLearning import MortrackML_Library as mSL
+        from MortrackLibrary.machineLearning import MortrackML_Library as mSL
         dL = mSL.DeepLearning(matrix_x, matrix_y)
         # We will indicate that we want 2 neurons in Layer1 and 1 neuron in Layer2
         aNND = [
